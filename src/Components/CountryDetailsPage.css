@@ -1,0 +1,86 @@
+.countryDetails {
+  background-color: #202c37;
+  color: white;
+  padding: 4rem;
+  max-width: 100%;
+}
+
+.countryDetails .back-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 75px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
+  padding: .5rem 2.75rem;
+  background-color: #202c37;
+  color: white;
+  text-decoration: none;
+}
+
+.countryDetails .container {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 4rem;
+  -ms-grid-columns: (minmax(350px, 600px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 600px));
+  gap: 120px;
+  padding-top: 1rem;
+}
+
+.countryDetails .container .list-items-container {
+  display: -ms-grid;
+  display: grid;
+  font-size: 16px;
+  line-height: 1.75rem;
+}
+
+.countryDetails .container .list-items-container .border {
+  -webkit-box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
+  color: white;
+  margin-left: 1rem;
+  padding: 0.25rem 2rem;
+}
+
+.countryDetails .container .list-items-container .list-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 100px;
+}
+
+.countryDetails .container .list-items-container .list {
+  padding-left: 0;
+}
+
+.countryDetails .container .list-items-container .list .span-bold {
+  font-weight: 600;
+}
+
+.countryDetails .container .list-items-container .list li {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.countryDetails .container .flag {
+  cursor: pointer;
+  max-height: 350px;
+  max-width: 500px;
+}
+
+@media screen and (max-width: 300px) {
+  .flag {
+    width: 280px;
+  }
+}
+/*# sourceMappingURL=CountryDetailsPage.css.map */
