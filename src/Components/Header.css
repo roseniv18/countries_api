@@ -1,6 +1,6 @@
 header {
-  background-color: #2b3945;
-  color: white;
+  background-color: var(--elements);
+  color: var(--text);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,4 +37,9 @@ header .header__theme-switcher {
   gap: 10px;
   cursor: pointer;
 }
-/*# sourceMappingURL=Header.css.map */
+
+@media screen and (max-width: 460px) {
+  header {
+    padding: 1rem;
+  }
+}

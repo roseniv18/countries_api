@@ -3,9 +3,10 @@ import formattedCountries from '../js/getCountries'
 import Country from './Country'
 import './Countries.css'
 import { Link } from 'react-router-dom'
+import { UilSearch } from '@iconscout/react-unicons'
 
 
-function Countries() {
+function Countries({ theme }) {
 
   const [countries, setCountries] = useState()
   
@@ -52,14 +53,18 @@ function Countries() {
   }, [countries, query, region])
 
   return (
-    <section id="main" data-theme='light'>
-      <div className='input-div' >
-        <input
+    <section id="main" data-theme={theme}>
+      <div className='search-div' >
+        <div className='input-div'>
+          <input
             placeholder="Search for a country..."
             name="country"
             value={query}
             onChange={(e) => handleInputChange(e)}
-        />
+          />
+          <UilSearch className='search-icon' />
+        </div>
+        
 
         <select onChange={(e) => handleRegionChange(e)} value={region}>
             <option value=''>Filter By Region</option>

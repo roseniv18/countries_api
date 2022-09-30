@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import './CountryDetailsPage.css'
 import { UilArrowLeft } from '@iconscout/react-unicons' 
 
-function CountryDetailsPage() {
+function CountryDetailsPage( { theme }) {
 
   const [country, setCountry] = useState()
   const {countryName} = useParams()
@@ -25,7 +25,7 @@ function CountryDetailsPage() {
   
   return (
     
-    <div className='countryDetails'>
+    <div className='countryDetails' data-theme = {theme}>
       
       <Link to='/' className='back-button'>
           <UilArrowLeft />Back

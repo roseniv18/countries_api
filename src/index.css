@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,800;1,300;1,600;1,800&display=swap");
 
+:root {
+  --background: hsl(0, 0%, 98%);
+  --elements: hsl(0, 0%, 100%);
+  --text: hsl(200, 15%, 8%);
+  --input: hsl(0, 0%, 52%);
+}
 
+[data-theme='dark'] {
+  --background: hsl(207, 26%, 17%);
+  --elements: hsl(209, 23%, 22%);
+  --text: hsl(0, 0%, 100%);
+}
 
 body, #root {
   margin: 0;
@@ -8,6 +19,7 @@ body, #root {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif;
+  min-height: 100vh;
 }
 
 code {

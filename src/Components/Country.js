@@ -5,7 +5,7 @@ function Country({ country }) {
     const {flag, name, population, region, capital} = country
 
     return (
-        <div className='country'>
+        <div className='country' data-theme='light'>
             <img src={flag} alt='' className='flag'/>
 
             <div className='info'>
