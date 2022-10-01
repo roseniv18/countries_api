@@ -40,7 +40,7 @@ function Countries({ theme }) {
                     .map((country, index) => {
                       
                       return (
-                        <Link to = {`/countries_api/${country.name}`} className='link' key = {index}>
+                        <Link to = {`/countries_api/${encodeURI(country.name)}`} className='link' key = {index}>
                           <Country country = {country} />
                         </Link>  
                       )
