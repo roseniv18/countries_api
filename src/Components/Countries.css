@@ -9,7 +9,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: white;
+  color: var(--text);
   padding: 1rem 4rem;
 }
 
@@ -31,7 +31,7 @@
   padding: .75rem 2.5rem;
   width: 300px;
   background-color: var(--elements);
-  color: white;
+  color: var(--text);
   border: none;
   border-radius: 5px;
 }

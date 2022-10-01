@@ -34,7 +34,7 @@ function CountryDetailsPage( { theme }) {
     
     <div className='countryDetails' data-theme = {theme}>
       
-      <Link to='/' className='back-button'>
+      <Link to='/countries_api' className='back-button'>
           <UilArrowLeft />Back
       </Link>
 
