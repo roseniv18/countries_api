@@ -6,10 +6,6 @@ I built this using:
 * React Unicons  
 * For the API I used [restcountries](https://restcountries.com/#api-endpoints-v3-all)
 
-This was a challenging experience - my code is not perfect and these are some things I wish to improve in the future:
-- Error handling
-- Commenting my code more
-
 ## The challenge: 
 Your challenge is integrating with the REST Countries API to pull country data and display it like in the designs.
 
