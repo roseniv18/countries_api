@@ -93,11 +93,12 @@
  
 .countries {
   margin-top: 3rem;
+  width: 100%;
+  gap: 60px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (300px)[auto-fit];
-      grid-template-columns: repeat(auto-fit, 300px);
-  gap: 60px;
+  -ms-grid-columns: (280px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .countries .link {
