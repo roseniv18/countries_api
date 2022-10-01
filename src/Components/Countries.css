@@ -95,17 +95,17 @@
 .countries {
   margin-top: 3rem;
   width: 100%;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 40px; */
 
-  /* display: -ms-grid; */
-  /* display: grid; */
-  /* -ms-grid-columns: (280px)[auto-fit]; */
-      /* grid-template-columns: repeat(auto-fit, 20%); */
+  display: -ms-grid;
+  display: grid;
+  justify-content: space-between;
+  /* -ms-grid-columns: (280px)[auto-fill]; */
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 30px;
 }
 
 .countries .link {
@@ -159,13 +159,13 @@
 
 @media screen and (max-width: 780px){
   .countries {
-    justify-content: center;
+    justify-items: center;
   }
 }
 
 @media screen and (max-width: 640px) {
   .countries {
-    justify-content: center;
+    justify-items: center;
   }
 }
 
