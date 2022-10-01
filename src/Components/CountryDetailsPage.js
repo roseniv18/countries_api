@@ -11,8 +11,15 @@ function CountryDetailsPage( { theme }) {
   useEffect(() => {
     const getCountry = async () => {
       try {
+
+        if (countryName) {
           await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`).then(res => res.json())
           .then(data => setCountry(data))
+        }
+        else {
+          console.log('countryName is empty!' + countryName)
+        } 
+
       } catch (error) {
         console.log(error)
       }
