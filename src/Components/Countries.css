@@ -25,6 +25,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  
 }
 
 #main .search-div input {
@@ -94,16 +95,23 @@
 .countries {
   margin-top: 3rem;
   width: 100%;
-  gap: 60px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (280px)[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 40px;
+
+  /* display: -ms-grid; */
+  /* display: grid; */
+  /* -ms-grid-columns: (280px)[auto-fit]; */
+      /* grid-template-columns: repeat(auto-fit, 20%); */
 }
 
 .countries .link {
   color: var(--elements);
   text-decoration: none;
+  align-self: center;
 }
 
 .countries .country {
@@ -118,6 +126,7 @@
   color: var(--text);
   border-radius: 5px;
   height: 400px;
+  max-width: 300px;
 }
 
 .countries .country h1 {
@@ -148,9 +157,15 @@
   border-top-right-radius: 5px;
 }
 
-@media screen and (max-width: 680px){
+@media screen and (max-width: 780px){
   .countries {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .countries {
+    justify-content: center;
   }
 }
 
@@ -170,6 +185,8 @@
     height: 40px;
   }
 }
+
+
 
 @media screen and (max-width: 360px){
   #main > .search-div {
