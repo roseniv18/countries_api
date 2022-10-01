@@ -18,8 +18,8 @@ function App() {
     <Router>
       <Header changeTheme = {changeTheme} theme = {theme}/>
       <Routes>
-        <Route path="/" element = {<Countries theme = {theme}/>}></Route>
-        <Route path="/:countryName" element = {<CountryDetailsPage theme = {theme} />}></Route>
+        <Route path="/countries_api" element = {<Countries theme = {theme}/>}></Route>
+        <Route path="/countries_api/:countryName" element = {<CountryDetailsPage theme = {theme} />}></Route>
         <Route path="*" element = {<Error />}></Route>
       </Routes>
     </Router>
