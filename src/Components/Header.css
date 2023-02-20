@@ -6,17 +6,18 @@ header {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: .75rem 4rem;
   -webkit-box-shadow: 0px 3px 10px 7px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 3px 10px 7px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 10px 7px rgba(0, 0, 0, 0.75);
+  border-bottom: 2px solid var(--text);
 }
 
 header .header__header-title {

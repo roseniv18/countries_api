@@ -1,1 +1,24 @@
-/* No CSS *//*# sourceMappingURL=Error.css.map */
+.error-page {
+    background-color: var(--elements);
+    color: var(--text);
+    padding-top: 7rem;
+    height: 100vh;
+    text-align: center;
+}
+
+.error-page > h1 {
+    margin-bottom: 3rem;
+}
+
+.back-button {
+    background-color: var(--text);
+    color: var(--elements);
+    text-decoration: none;
+    padding: .7rem;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 3px;
+    -webkit-box-shadow: 3px 3px 7px 0px var(--text);
+    -moz-box-shadow: 3px 3px 7px 0px var(--text);
+    box-shadow: 3px 3px 7px 0px var(--text);
+}

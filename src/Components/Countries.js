@@ -46,11 +46,8 @@ function Countries() {
                         </Link>  
                       )
                   }))
-      
     }
-
     return
-    
   }, [countries, query, region])
 
   return (
