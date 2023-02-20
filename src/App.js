@@ -1,10 +1,11 @@
-import './App.css';
+import './App.css'
 import Header from './Components/Header'
 import Countries from './Components/Countries'
-import Error from './Components/Error';
+import Error from './Components/Error'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import CountryDetailsPage from './Components/CountryDetailsPage';
-import { useState } from 'react';
+import CountryDetailsPage from './Components/CountryDetailsPage'
+import { useState } from 'react'
+import { useGlobalContext } from './context'
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
         <Route path="*" element = {<Error />}></Route>
       </Routes>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
