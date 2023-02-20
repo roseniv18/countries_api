@@ -2,8 +2,10 @@ import React, {useState, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
 import './CountryDetailsPage.css'
 import { UilArrowLeft } from '@iconscout/react-unicons' 
+import { useGlobalContext } from '../context'
 
-function CountryDetailsPage( { theme }) {
+function CountryDetailsPage() {
+  const {theme} = useGlobalContext()
 
   const [country, setCountry] = useState()
   const {countryName} = useParams()

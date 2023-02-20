@@ -9,19 +9,14 @@ import { useGlobalContext } from './context'
 
 function App() {
 
-  const [theme, setTheme] = useState('light')
-
-  const changeTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
-  
+  const {theme} = useGlobalContext()
 
   return (
     <Router>
-      <Header changeTheme = {changeTheme} theme = {theme}/>
+      <Header theme={theme}/>
       <Routes>
-        <Route path="/countries_api" element = {<Countries theme = {theme}/>}></Route>
-        <Route path="/countries_api/:countryName" element = {<CountryDetailsPage theme = {theme} />}></Route>
+        <Route path="/countries_api" element = {<Countries />}></Route>
+        <Route path="/countries_api/:countryName" element = {<CountryDetailsPage />}></Route>
         <Route path="*" element = {<Error />}></Route>
       </Routes>
     </Router>

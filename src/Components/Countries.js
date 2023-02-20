@@ -4,9 +4,10 @@ import Country from './Country'
 import './Countries.css'
 import { Link } from 'react-router-dom'
 import { UilSearch } from '@iconscout/react-unicons'
+import { useGlobalContext } from '../context'
 
-
-function Countries({ theme }) {
+function Countries() {
+  const {theme} = useGlobalContext()
 
   const [countries, setCountries] = useState()
   
