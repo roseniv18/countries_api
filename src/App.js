@@ -4,12 +4,17 @@ import Countries from './Components/Countries'
 import Error from './Components/Error'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import CountryDetailsPage from './Components/CountryDetailsPage'
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { useGlobalContext } from './context'
 
 function App() {
 
   const {theme} = useGlobalContext()
+
+  useEffect(() => {
+    document.documentElement.className = theme
+    localStorage.setItem("theme", theme)
+  }, [theme])
 
   return (
     <Router>
