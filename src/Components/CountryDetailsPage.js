@@ -38,11 +38,11 @@ function CountryDetailsPage() {
       </Link>
 
       { country !== undefined ? country.map((country, index) => {
-
+        console.log(country)
         let currencies = []
         let languages = []
         let borders = []
-        country.borders ? borders = [...country.borders] : borders = []
+        country.borders ? (borders = [...country.borders]) : (borders = [])
 
         for(const currency in country.currencies) {
           currencies.push(currency)
