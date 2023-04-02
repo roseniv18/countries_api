@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import App from './App'
-import { CountriesProvider } from './context'
+import React from "react"
+import ReactDOM from "react-dom/client"
+import "./index.css"
+import App from "./App"
+import { CountriesProvider } from "./context"
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
-  <CountriesProvider>
-    <App />
-  </CountriesProvider>
+    <CountriesProvider>
+        <App />
+    </CountriesProvider>
 )

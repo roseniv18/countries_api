@@ -1,24 +1,29 @@
-import React from 'react'
+import React from "react"
 
 function Country({ country }) {
-    
-    const {flag, name, population, region, capital} = country
+    const { flag, name, population, region, capital } = country
 
     return (
-        <div className='country' data-theme='light'>
-            <img src={flag} alt='' className='flag'/>
+        <div className="country" data-theme="light">
+            <img src={flag} alt="" className="flag" />
 
-            <div className='info'>
+            <div className="info">
                 <h1>{name}</h1>
                 <ul>
-                    <li><span className='info__tag'>Population: </span> {population}</li>
-                    <li><span className='info__tag'>Region: </span> {region}</li>
-                    <li><span className='info__tag'>Capital: </span> {capital}</li>
+                    <li>
+                        <span className="info__tag">Population: </span>{" "}
+                        {population}
+                    </li>
+                    <li>
+                        <span className="info__tag">Region: </span> {region}
+                    </li>
+                    <li>
+                        <span className="info__tag">Capital: </span> {capital}
+                    </li>
                 </ul>
             </div>
-                
         </div>
     )
-    }
+}
 
 export default Country

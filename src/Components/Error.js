@@ -1,19 +1,20 @@
-import React from 'react'
-import './Error.css'
-import { Link } from 'react-router-dom'
-import './CountryDetailsPage.css'
-import { useGlobalContext } from '../context'
+import React from "react"
+import "./Error.css"
+import { Link } from "react-router-dom"
+import "./CountryDetailsPage.css"
+import { useGlobalContext } from "../context"
 
 function Error() {
-  const {theme} = useGlobalContext()
+    const { theme } = useGlobalContext()
 
-  return (
-    <div className="error-page" data-theme={theme}>
-        <h1>Oops! The page you requested was not found.</h1>
-        <Link to='/countries_api' className='back-button'>Back Home</Link>
-    </div>
-    
-  )
+    return (
+        <div className="error-page" data-theme={theme}>
+            <h1>Oops! The page you requested was not found.</h1>
+            <Link to="/countries_api" className="back-button">
+                Back Home
+            </Link>
+        </div>
+    )
 }
 
 export default Error

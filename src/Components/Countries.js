@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react"
-import formattedCountries from "../js/getCountries"
 import Country from "./Country"
 import "./Countries.css"
 import { Link } from "react-router-dom"
@@ -7,55 +6,34 @@ import { UilSearch } from "@iconscout/react-unicons"
 import { useGlobalContext } from "../context"
 
 function Countries() {
-    const { theme } = useGlobalContext()
+    const { theme, loading, handleOptions, options, countries } =
+        useGlobalContext()
+    const { region, query } = options
 
-    const [countries, setCountries] = useState()
-
-    const [filtered, setFiltered] = useState()
-    const [query, setQuery] = useState("")
-    const [region, setRegion] = useState("")
-
-    const handleRegionChange = (e) => {
-        setRegion(e.target.value)
-    }
-
-    const handleInputChange = (e) => {
-        setQuery(e.target.value)
-    }
+    const [filtered, setFiltered] = useState([])
 
     useEffect(() => {
-        const results = async () => {
-            await formattedCountries().then((data) => setCountries(data))
-        }
+        if (!countries) return
 
-        results()
-    }, [query, region])
-
-    useEffect(() => {
-        if (countries === undefined) return
-
-        if (countries !== undefined) {
-            setFiltered(
-                countries
-                    .filter(
-                        (country) =>
-                            country.name.toLowerCase().includes(query) &&
-                            country.region.includes(region)
-                    ) // Based on the given query and the selected region filter the corresponding countries
-                    .map((country, index) => {
-                        return (
-                            <Link
-                                to={`/countries_api/${encodeURI(country.name)}`}
-                                className="link"
-                                key={index}
-                            >
-                                <Country country={country} />
-                            </Link>
-                        )
-                    })
-            )
-        }
-        return
+        setFiltered(
+            countries
+                .filter(
+                    (country) =>
+                        country.name.toLowerCase().includes(query) &&
+                        country.region.includes(region)
+                ) // Based on the given query and the selected region filter the corresponding countries
+                .map((country, index) => {
+                    return (
+                        <Link
+                            to={`/countries_api/${encodeURI(country.name)}`}
+                            className="link"
+                            key={index}
+                        >
+                            <Country country={country} />
+                        </Link>
+                    )
+                })
+        )
     }, [countries, query, region])
 
     return (
@@ -64,14 +42,18 @@ function Countries() {
                 <div className="input-div">
                     <input
                         placeholder="Search for a country..."
-                        name="country"
+                        name="query"
                         value={query}
-                        onChange={(e) => handleInputChange(e)}
+                        onChange={(e) => handleOptions(e)}
                     />
                     <UilSearch className="search-icon" />
                 </div>
 
-                <select onChange={(e) => handleRegionChange(e)} value={region}>
+                <select
+                    onChange={(e) => handleOptions(e)}
+                    name="region"
+                    value={region}
+                >
                     <option value="">All</option>
                     <option value="Africa">Africa</option>
                     <option value="Americas">Americas</option>
@@ -82,7 +64,7 @@ function Countries() {
             </div>
 
             <div className="countries">
-                {filtered !== undefined ? filtered.map((f) => f) : ""}
+                {filtered.length !== 0 && filtered.map((f) => f)}
             </div>
         </section>
     )
