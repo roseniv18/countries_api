@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react"
 import ThemeBtn from "../ThemeBtn"
-import { CountriesProvider } from "../../../context"
+import { CountriesProvider } from "../../../../context"
 
 // MOCK LOCAL STORAGE
 global.localStorage = {
@@ -22,8 +22,6 @@ const MockThemeBtn = () => {
         </CountriesProvider>
     )
 }
-
-console.log(document.body.classList[0])
 
 describe("Theme Switcher", () => {
     it("renders theme btn on load", () => {

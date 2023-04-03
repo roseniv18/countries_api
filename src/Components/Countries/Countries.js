@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react"
 import Country from "../Country/Country"
 import "./Countries.css"
-import { Link } from "react-router-dom"
 import { UilSearch } from "@iconscout/react-unicons"
 import { useGlobalContext } from "../../context"
 
@@ -22,15 +21,7 @@ function Countries() {
                         country.region.includes(region)
                 ) // Based on the given query and the selected region filter the corresponding countries
                 .map((country, index) => {
-                    return (
-                        <Link
-                            to={`/countries_api/${encodeURI(country.name)}`}
-                            className="link"
-                            key={index}
-                        >
-                            <Country country={country} />
-                        </Link>
-                    )
+                    return <Country country={country} key={index} />
                 })
         )
     }, [countries, query, region])
