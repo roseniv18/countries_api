@@ -37,15 +37,13 @@ function CountryDetailsPage() {
                 Back
             </Link>
 
-            {country !== undefined
+            {country
                 ? country.map((country, index) => {
                       console.log(country)
                       let currencies = []
                       let languages = []
                       let borders = []
-                      country.borders
-                          ? (borders = [...country.borders])
-                          : (borders = [])
+                      country.borders ? (borders = [...country.borders]) : (borders = [])
 
                       for (const currency in country.currencies) {
                           currencies.push(currency)
@@ -57,11 +55,7 @@ function CountryDetailsPage() {
 
                       return (
                           <div className="container" key={index}>
-                              <img
-                                  src={country.flags.svg}
-                                  className="flag"
-                                  alt="flag"
-                              ></img>
+                              <img src={country.flags.svg} className="flag" alt="flag"></img>
 
                               <div className="list-items-container">
                                   <h1>{country.name.common}</h1>
@@ -69,100 +63,66 @@ function CountryDetailsPage() {
                                   <div className="list-container">
                                       <ul className="list">
                                           <li>
-                                              <span className="span-bold">
-                                                  Native Name:{" "}
-                                              </span>
+                                              <span className="span-bold">Native Name: </span>
                                               {
                                                   country.altSpellings[
-                                                      country.altSpellings
-                                                          .length - 1
+                                                      country.altSpellings.length - 1
                                                   ]
                                               }
                                           </li>
                                           <li>
-                                              <span className="span-bold">
-                                                  Population:{" "}
-                                              </span>
+                                              <span className="span-bold">Population: </span>
                                               {country.population.toLocaleString()}
                                           </li>
                                           <li>
-                                              <span className="span-bold">
-                                                  Region:{" "}
-                                              </span>
+                                              <span className="span-bold">Region: </span>
                                               {country.region}
                                           </li>
                                           <li>
-                                              <span className="span-bold">
-                                                  Sub Region:{" "}
-                                              </span>
+                                              <span className="span-bold">Sub Region: </span>
                                               {country.subregion}
                                           </li>
                                           <li>
-                                              <span className="span-bold">
-                                                  Capital:{" "}
-                                              </span>
+                                              <span className="span-bold">Capital: </span>
                                               {country.capital[0]}
                                           </li>
                                       </ul>
 
                                       <ul className="list">
                                           <li>
-                                              <span className="span-bold">
-                                                  Top Level Domain:{" "}
-                                              </span>
+                                              <span className="span-bold">Top Level Domain: </span>
                                               {country.tld[0]}
                                           </li>
                                           <li>
-                                              <span className="span-bold">
-                                                  Currencies:{" "}
-                                              </span>
+                                              <span className="span-bold">Currencies: </span>
                                               {currencies.length !== 0 ? (
                                                   currencies.map((c, index) => {
-                                                      return (
-                                                          <span key={index}>
-                                                              {c}
-                                                          </span>
-                                                      )
+                                                      return <span key={index}>{c}</span>
                                                   })
                                               ) : (
-                                                  <span>
-                                                      NO CURRENCIES FOUND
-                                                  </span>
+                                                  <span>NO CURRENCIES FOUND</span>
                                               )}
                                           </li>
 
                                           <li>
-                                              <span className="span-bold">
-                                                  Languages:{" "}
-                                              </span>
+                                              <span className="span-bold">Languages: </span>
                                               {languages.length !== 0 ? (
                                                   languages.map((l, index) => {
-                                                      return (
-                                                          <span key={index}>
-                                                              {l}
-                                                          </span>
-                                                      )
+                                                      return <span key={index}>{l}</span>
                                                   })
                                               ) : (
-                                                  <span>
-                                                      NO LANGUAGES FOUND
-                                                  </span>
+                                                  <span>NO LANGUAGES FOUND</span>
                                               )}
                                           </li>
                                       </ul>
                                   </div>
 
                                   <div className="border-container">
-                                      <span className="span-bold">
-                                          Border Countries:{" "}
-                                      </span>
+                                      <span className="span-bold">Border Countries: </span>
                                       {borders.length !== 0
                                           ? borders.map((b, index) => {
                                                 return (
-                                                    <span
-                                                        key={index}
-                                                        className="border"
-                                                    >
+                                                    <span key={index} className="border">
                                                         {b}{" "}
                                                     </span>
                                                 )

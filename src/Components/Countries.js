@@ -6,8 +6,7 @@ import { UilSearch } from "@iconscout/react-unicons"
 import { useGlobalContext } from "../context"
 
 function Countries() {
-    const { theme, loading, handleOptions, options, countries } =
-        useGlobalContext()
+    const { theme, loading, handleOptions, options, countries } = useGlobalContext()
     const { region, query } = options
 
     const [filtered, setFiltered] = useState([])
@@ -49,11 +48,7 @@ function Countries() {
                     <UilSearch className="search-icon" />
                 </div>
 
-                <select
-                    onChange={(e) => handleOptions(e)}
-                    name="region"
-                    value={region}
-                >
+                <select onChange={(e) => handleOptions(e)} name="region" value={region}>
                     <option value="">All</option>
                     <option value="Africa">Africa</option>
                     <option value="Americas">Americas</option>

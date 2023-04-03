@@ -16,8 +16,7 @@ const formattedCountries = async () => {
             return {
                 flag: country.flags.svg,
                 name: country.name.common,
-                native_name:
-                    country.altSpellings[country.altSpellings.length - 1],
+                native_name: country.altSpellings[country.altSpellings.length - 1],
                 population: country.population.toLocaleString(),
                 region: country.region,
                 subregion: country.subregion,
