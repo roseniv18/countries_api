@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import "./CountryDetailsPage.css"
 import { UilArrowLeft } from "@iconscout/react-unicons"
-import { useGlobalContext } from "../context"
+import { useGlobalContext } from "../../context"
+import getCountry from "../../js/getCountry"
 
 function CountryDetailsPage() {
     const { theme } = useGlobalContext()
@@ -11,24 +12,10 @@ function CountryDetailsPage() {
     const { countryName } = useParams()
 
     useEffect(() => {
-        const getCountry = async () => {
-            try {
-                if (countryName) {
-                    await fetch(
-                        `https://restcountries.com/v3.1/name/${encodeURI(
-                            countryName
-                        )}?fullText=true`
-                    )
-                        .then((res) => res.json())
-                        .then((data) => setCountry(data))
-                }
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-        getCountry()
-    }, [countryName])
+        getCountry(countryName)
+            .then((data) => setCountry(data))
+            .catch((err) => console.log(err))
+    }, [])
 
     return (
         <div className="countryDetails" data-theme={theme}>
@@ -39,7 +26,6 @@ function CountryDetailsPage() {
 
             {country
                 ? country.map((country, index) => {
-                      console.log(country)
                       let currencies = []
                       let languages = []
                       let borders = []
@@ -55,7 +41,11 @@ function CountryDetailsPage() {
 
                       return (
                           <div className="container" key={index}>
-                              <img src={country.flags.svg} className="flag" alt="flag"></img>
+                              <img
+                                  src={country.flags.svg}
+                                  className="flag"
+                                  alt="flag"
+                              ></img>
 
                               <div className="list-items-container">
                                   <h1>{country.name.common}</h1>
@@ -63,7 +53,9 @@ function CountryDetailsPage() {
                                   <div className="list-container">
                                       <ul className="list">
                                           <li>
-                                              <span className="span-bold">Native Name: </span>
+                                              <span className="span-bold">
+                                                  Native Name:{" "}
+                                              </span>
                                               {
                                                   country.altSpellings[
                                                       country.altSpellings.length - 1
@@ -71,7 +63,9 @@ function CountryDetailsPage() {
                                               }
                                           </li>
                                           <li>
-                                              <span className="span-bold">Population: </span>
+                                              <span className="span-bold">
+                                                  Population:{" "}
+                                              </span>
                                               {country.population.toLocaleString()}
                                           </li>
                                           <li>
@@ -79,7 +73,9 @@ function CountryDetailsPage() {
                                               {country.region}
                                           </li>
                                           <li>
-                                              <span className="span-bold">Sub Region: </span>
+                                              <span className="span-bold">
+                                                  Sub Region:{" "}
+                                              </span>
                                               {country.subregion}
                                           </li>
                                           <li>
@@ -90,11 +86,15 @@ function CountryDetailsPage() {
 
                                       <ul className="list">
                                           <li>
-                                              <span className="span-bold">Top Level Domain: </span>
+                                              <span className="span-bold">
+                                                  Top Level Domain:{" "}
+                                              </span>
                                               {country.tld[0]}
                                           </li>
                                           <li>
-                                              <span className="span-bold">Currencies: </span>
+                                              <span className="span-bold">
+                                                  Currencies:{" "}
+                                              </span>
                                               {currencies.length !== 0 ? (
                                                   currencies.map((c, index) => {
                                                       return <span key={index}>{c}</span>
@@ -105,7 +105,9 @@ function CountryDetailsPage() {
                                           </li>
 
                                           <li>
-                                              <span className="span-bold">Languages: </span>
+                                              <span className="span-bold">
+                                                  Languages:{" "}
+                                              </span>
                                               {languages.length !== 0 ? (
                                                   languages.map((l, index) => {
                                                       return <span key={index}>{l}</span>
@@ -118,7 +120,9 @@ function CountryDetailsPage() {
                                   </div>
 
                                   <div className="border-container">
-                                      <span className="span-bold">Border Countries: </span>
+                                      <span className="span-bold">
+                                          Border Countries:{" "}
+                                      </span>
                                       {borders.length !== 0
                                           ? borders.map((b, index) => {
                                                 return (

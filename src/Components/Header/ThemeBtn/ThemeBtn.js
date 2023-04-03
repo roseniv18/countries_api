@@ -1,4 +1,4 @@
-import { useGlobalContext } from "../../context"
+import { useGlobalContext } from "../../../context"
 import { UilMoon, UilSun } from "@iconscout/react-unicons"
 
 const ThemeBtn = () => {

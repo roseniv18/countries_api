@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from "react"
-import Country from "./Country"
+import Country from "../Country/Country"
 import "./Countries.css"
 import { Link } from "react-router-dom"
 import { UilSearch } from "@iconscout/react-unicons"
-import { useGlobalContext } from "../context"
+import { useGlobalContext } from "../../context"
 
 function Countries() {
     const { theme, loading, handleOptions, options, countries } = useGlobalContext()

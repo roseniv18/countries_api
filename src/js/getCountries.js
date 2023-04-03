@@ -33,6 +33,4 @@ const formattedCountries = async () => {
     return formattedCountries
 }
 
-formattedCountries()
-
 export default formattedCountries

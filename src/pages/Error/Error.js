@@ -1,8 +1,8 @@
 import React from "react"
 import "./Error.css"
 import { Link } from "react-router-dom"
-import "./CountryDetailsPage.css"
-import { useGlobalContext } from "../context"
+import "../CountryDetailsPage/CountryDetailsPage.css"
+import { useGlobalContext } from "../../context"
 
 function Error() {
     const { theme } = useGlobalContext()

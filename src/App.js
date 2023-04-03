@@ -1,9 +1,9 @@
 import "./App.css"
-import Header from "./Components/Header"
-import Countries from "./Components/Countries"
-import Error from "./Components/Error"
+import Header from "./Components/Header/Header"
+import Countries from "./Components/Countries/Countries"
+import CountryDetailsPage from "./pages/CountryDetailsPage/CountryDetailsPage"
+import Error from "./pages/Error/Error"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import CountryDetailsPage from "./Components/CountryDetailsPage"
 import { useEffect } from "react"
 import { useGlobalContext } from "./context"
 
