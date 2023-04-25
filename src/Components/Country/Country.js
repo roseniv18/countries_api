@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 
 const Country = ({ country }) => {
     const { flag, name, population, region, capital } = country
-    console.log(country)
     return (
         <Link to={`/countries_api/${encodeURI(country.name)}`} className="link">
             <div className="country" data-theme="light" data-testid="countryDiv">
