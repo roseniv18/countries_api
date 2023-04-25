@@ -1,30 +1,19 @@
-import { React, useState, useEffect } from "react"
-import Country from "../Country/Country"
 import "./Countries.css"
 import { UilSearch } from "@iconscout/react-unicons"
 import { useGlobalContext } from "../../context"
+import Error from "../Error/Error"
 
 function Countries() {
-    const { theme, loading, handleOptions, options, countries } = useGlobalContext()
+    const { theme, handleOptions, options, error, filtered } = useGlobalContext()
     const { region, query } = options
 
-    const [filtered, setFiltered] = useState([])
-
-    useEffect(() => {
-        if (!countries) return
-
-        setFiltered(
-            countries
-                .filter(
-                    (country) =>
-                        country.name.toLowerCase().includes(query) &&
-                        country.region.includes(region)
-                ) // Based on the given query and the selected region filter the corresponding countries
-                .map((country, index) => {
-                    return <Country country={country} key={index} />
-                })
+    if (error) {
+        return (
+            <section id="main" data-theme={theme}>
+                <Error />
+            </section>
         )
-    }, [countries, query, region])
+    }
 
     return (
         <section id="main" data-theme={theme}>

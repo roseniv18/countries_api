@@ -4,16 +4,19 @@ const getCountries = async () => {
     try {
         const res = await fetch(URL)
         const countries = await res.json()
-        return countries
+        if (countries.length > 0) {
+            return countries
+        }
     } catch (err) {
-        console.log(err)
+        return err
     }
 }
 
 const formattedCountries = async () => {
-    const formattedCountries = await getCountries().then((data) =>
-        data.map((country) => {
-            return {
+    try {
+        const countries = await getCountries()
+        if (countries) {
+            return countries.map((country) => ({
                 flag: country.flags.svg,
                 name: country.name.common,
                 native_name: country.altSpellings[country.altSpellings.length - 1],
@@ -26,11 +29,13 @@ const formattedCountries = async () => {
                 languages: country.languages,
                 borders: country.borders,
                 code: country.cca3,
-            }
-        })
-    )
-
-    return formattedCountries
+            }))
+        } else {
+            throw new Error("Could not fetch countries!")
+        }
+    } catch (err) {
+        return err
+    }
 }
 
 export default formattedCountries

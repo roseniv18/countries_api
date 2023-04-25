@@ -1,5 +1,5 @@
 import React from "react"
-import "./Error.css"
+import "./ErrorPage.css"
 import { Link } from "react-router-dom"
 import "../CountryDetailsPage/CountryDetailsPage.css"
 import { useGlobalContext } from "../../context"

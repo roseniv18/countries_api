@@ -1,103 +1,109 @@
 .countryDetails {
-  background-color: var(--background);
-  color: var(--text);
-  padding: 4rem;
-  min-height: 75vh;
-  max-width: 100%;
+    background-color: var(--background);
+    color: var(--text);
+    padding: 4rem;
+    min-height: 75vh;
+    max-width: 100%;
 }
 
 .countryDetails .back-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 75px;
-  border: none;
-  -webkit-box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
-  padding: .5rem 2.75rem;
-  background-color: var(--elements);
-  color: var(--text);
-  text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 75px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
+    padding: 0.5rem 2.75rem;
+    background-color: var(--elements);
+    color: var(--text);
+    text-decoration: none;
 }
 
 .countryDetails .container {
-  padding-top: 2em;
-  display: flex;
-  flex-direction: row;
-  gap: 7em;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: row;
+    gap: 7em;
 }
 
 .countryDetails .container .list-items-container {
-  display: -ms-grid;
-  display: grid;
-  font-size: 16px;
-  line-height: 1.75rem;
+    display: -ms-grid;
+    display: grid;
+    font-size: 16px;
+    line-height: 1.75rem;
 }
 
-.countryDetails .container .list-items-container .border {
-  -webkit-box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
-  color: var(--text);
-  margin-left: 1rem;
-  padding: 0.25rem 2rem;
+.border {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 11px -2px rgba(0, 0, 0, 0.75);
+    color: var(--text);
+    margin-left: 1rem;
+    padding: 0.25rem 2rem;
+    transition: 0.18s all;
+}
+
+.border:hover {
+    color: rgb(74, 137, 185);
+    font-weight: 600;
 }
 
 .countryDetails .container .list-items-container .list-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: 100px; 
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 100px;
 }
 
 .countryDetails .container .list-items-container .list {
-  padding-left: 0;
+    padding-left: 0;
 }
 
 .countryDetails .container .list-items-container .list .span-bold {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .countryDetails .container .list-items-container .list li {
-  list-style-type: none;
-  margin-left: 0;
-  color: var(--text);
+    list-style-type: none;
+    margin-left: 0;
+    color: var(--text);
 }
 
 .countryDetails .container .flag {
-  cursor: pointer;
-  max-height: 350px;
-  max-width: 500px;
+    cursor: pointer;
+    max-height: 350px;
+    max-width: 500px;
 }
 @media screen and (max-width: 540px) {
-  .countryDetails .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .countryDetails .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .countryDetails {
-    padding: 1rem;
-  }
-  
-  .flag {
-    width: 320px;
-  }
+    .countryDetails {
+        padding: 1rem;
+    }
+
+    .flag {
+        width: 320px;
+    }
 }
 @media screen and (max-width: 380px) {
-  .countryDetails {
-    padding: 1rem;
-  }
-  
-  .flag {
-    width: 250px;
-  }
-}
+    .countryDetails {
+        padding: 1rem;
+    }
 
+    .flag {
+        width: 250px;
+    }
+}
