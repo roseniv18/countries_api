@@ -4,7 +4,7 @@ const Country = ({ country }) => {
     const { flag, name, population, region, capital } = country
     return (
         <Link to={`/countries_api/${encodeURI(country.name)}`} className="link">
-            <div className="country" data-theme="light" data-testid="countryDiv">
+            <div className="country" data-testid="countryDiv">
                 <img src={flag} alt={name} className="flag" />
 
                 <div className="info">
