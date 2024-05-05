@@ -1,200 +1,191 @@
 #main {
-  margin: 0;
-  background-color: var(--background);
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 1rem 4rem;
+    margin: 0;
+    background-color: var(--background);
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 1rem 4rem;
 }
 
 #main .search-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-  
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
 }
 
 #main .search-div input {
-  padding: .75rem 2.5rem;
-  width: 300px;
-  background-color: var(--elements);
-  color: var(--text);
-  border: none;
-  border-radius: 5px;
+    padding: 0.75rem 2.5rem;
+    width: 300px;
+    background-color: var(--elements);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
 }
 
 #main .search-div input::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
-  color: var(--text);
+    /* WebKit, Blink, Edge */
+    color: var(--text);
 }
 
 #main .search-div input:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: var(--text);
-  opacity: 1;
+    /* Mozilla Firefox 4 to 18 */
+    color: var(--text);
+    opacity: 1;
 }
 
 #main .search-div input::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  color: var(--text);
-  opacity: 1;
+    /* Mozilla Firefox 19+ */
+    color: var(--text);
+    opacity: 1;
 }
 
 #main .search-div input:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: var(--text);
+    /* Internet Explorer 10-11 */
+    color: var(--text);
 }
 
 #main .search-div input:focus {
-  border: none;
+    border: none;
 }
 
 #main .search-div input:active {
-  border: none;
+    border: none;
 }
 
 #main .search-div inputplaceholder {
-  color: var(--text);
+    color: var(--text);
 }
 
 #main .search-div select {
-  background-color: var(--elements);
-  color: var(--text);
-  border: none;
-  width: 150px;
-  padding: 0 1rem;
-  border-radius: 5px;
+    background-color: var(--elements);
+    color: var(--text);
+    border: none;
+    width: 150px;
+    padding: 0 1rem;
+    border-radius: 5px;
 }
 
 #main .search-div > .input-div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
 }
 
 #main .search-div > .input-div > .search-icon {
-  position: absolute;
-  left: 10px;
+    position: absolute;
+    left: 10px;
 }
- 
-.countries {
-  margin-top: 3rem;
-  width: 100%;
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 40px; */
 
-  display: -ms-grid;
-  display: grid;
-  justify-content: space-between;
-  /* -ms-grid-columns: (280px)[auto-fill]; */
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 30px;
+.countries {
+    margin-top: 3rem;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
 }
 
 .countries .link {
-  color: var(--elements);
-  text-decoration: none;
-  align-self: center;
+    color: var(--elements);
+    text-decoration: none;
+    align-self: center;
 }
 
 .countries .country {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: var(--elements);
-  color: var(--text);
-  border-radius: 5px;
-  height: 400px;
-  max-width: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: var(--elements);
+    color: var(--text);
+    border-radius: 5px;
+    height: 400px;
+    max-width: 300px;
 }
 
 .countries .country h1 {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .countries .country .info {
-  padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .countries .country .info ul {
-  list-style-type: none;
-  padding-left: 0;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .countries .country .info ul .info__tag {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .countries .flag {
-  cursor: pointer;
-  width: 100%;
-  height: 200px;
-  vertical-align: top;
-  margin: 0;
-  padding: 0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 200px;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-@media screen and (max-width: 780px){
-  .countries {
-    justify-items: center;
-  }
+@media screen and (max-width: 780px) {
+    .countries {
+        justify-items: center;
+    }
 }
 
 @media screen and (max-width: 640px) {
-  .countries {
-    justify-items: center;
-  }
+    .countries {
+        justify-items: center;
+    }
 }
 
-@media screen and (max-width: 560px){
-  #main {
-    padding: 1rem;
-    align-items: center;
-  }
+@media screen and (max-width: 560px) {
+    #main {
+        padding: 1rem;
+        align-items: center;
+    }
 
-  #main > .search-div {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+    #main > .search-div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 
-  #main > .search-div > select {
-    height: 40px;
-  }
+    #main > .search-div > select {
+        height: 40px;
+    }
 }
 
+@media screen and (max-width: 360px) {
+    #main > .search-div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 
-
-@media screen and (max-width: 360px){
-  #main > .search-div {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  #main > .search-div > select {
-    height: 40px;
-  }
+    #main > .search-div > select {
+        height: 40px;
+    }
 }

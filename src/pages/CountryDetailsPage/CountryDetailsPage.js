@@ -4,6 +4,9 @@ import "./CountryDetailsPage.css"
 import { UilArrowLeft } from "@iconscout/react-unicons"
 import { useGlobalContext } from "../../context"
 import getCountry from "../../js/getCountry"
+import CountryListItem from "../../Components/CountryListItem/CountryListItem"
+import CountryList1 from "../../Components/CountryList/CountryList1"
+import CountryList2 from "../../Components/CountryList/CountryList2"
 
 function CountryDetailsPage() {
     const { theme, countries } = useGlobalContext()
@@ -29,22 +32,24 @@ function CountryDetailsPage() {
             </Link>
 
             {country ? (
-                country.map((country, index) => {
-                    let currencies = []
-                    let languages = []
+                country.map((country) => {
                     let borders = []
                     country.borders ? (borders = [...country.borders]) : (borders = [])
 
+                    // Loop over currencies in country object and push each one in array.
+                    let currencies = []
                     for (const currency in country.currencies) {
                         currencies.push(currency)
                     }
 
+                    // Loop over languages in country object and push each one in array.
+                    let languages = []
                     for (const language in country.languages) {
                         languages.push(country.languages[language])
                     }
 
                     return (
-                        <div className="container" key={index}>
+                        <div className="container" key={country.name}>
                             <img
                                 src={country.flags.svg}
                                 className="flag"
@@ -55,70 +60,16 @@ function CountryDetailsPage() {
                                 <h1>{country.name.common}</h1>
 
                                 <div className="list-container">
-                                    <ul className="list">
-                                        <li>
-                                            <span className="span-bold">
-                                                Native Name:{" "}
-                                            </span>
-                                            {
-                                                country.altSpellings[
-                                                    country.altSpellings.length - 1
-                                                ]
-                                            }
-                                        </li>
-                                        <li>
-                                            <span className="span-bold">
-                                                Population:{" "}
-                                            </span>
-                                            {country.population.toLocaleString()}
-                                        </li>
-                                        <li>
-                                            <span className="span-bold">Region: </span>
-                                            {country.region}
-                                        </li>
-                                        <li>
-                                            <span className="span-bold">
-                                                Sub Region:{" "}
-                                            </span>
-                                            {country.subregion}
-                                        </li>
-                                        <li>
-                                            <span className="span-bold">Capital: </span>
-                                            {country.capital[0]}
-                                        </li>
-                                    </ul>
-
-                                    <ul className="list">
-                                        <li>
-                                            <span className="span-bold">
-                                                Top Level Domain:{" "}
-                                            </span>
-                                            {country.tld[0]}
-                                        </li>
-                                        <li>
-                                            <span className="span-bold">
-                                                Currencies:{" "}
-                                            </span>
-                                            {currencies.length !== 0 ? (
-                                                currencies.map((c, index) => {
-                                                    return <span key={index}>{c}</span>
-                                                })
-                                            ) : (
-                                                <span>NO CURRENCIES FOUND</span>
-                                            )}
-                                        </li>
-
-                                        <li>
-                                            <span className="span-bold">Languages: </span>
-                                            {languages.length !== 0 ? (
-                                                languages.map((l, index) => {
-                                                    return <span key={index}>{l}</span>
-                                                })
-                                            ) : (
-                                                <span>NO LANGUAGES FOUND</span>
-                                            )}
-                                        </li>
-                                    </ul>
+                                    <CountryList1
+                                        country={country}
+                                        languages={languages}
+                                        currencies={currencies}
+                                    />
+                                    <CountryList2
+                                        country={country}
+                                        languages={languages}
+                                        currencies={currencies}
+                                    />
                                 </div>
 
                                 <div className="border-container">
