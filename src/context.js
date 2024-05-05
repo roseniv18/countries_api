@@ -5,11 +5,8 @@ import formattedCountries from "./js/getCountries"
 const CountriesContext = createContext()
 
 const getLocalStorageTheme = () => {
-    let theme = "light"
-    if (localStorage.getItem("theme")) {
-        theme = localStorage.getItem("theme")
-    }
-    return theme
+    let theme = localStorage.getItem("theme")
+    return theme ? theme : "light"
 }
 
 const CountriesProvider = ({ children }) => {
@@ -27,10 +24,6 @@ const CountriesProvider = ({ children }) => {
         setLoading(true)
         try {
             const res = await formattedCountries()
-            if (res instanceof Error) {
-                setError(res.toString())
-                return
-            }
             if (res) {
                 setCountries(res)
             }
@@ -42,31 +35,44 @@ const CountriesProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        results()
+        // Fetch countries
+        ;(async () => {
+            setLoading(true)
+            try {
+                const res = await formattedCountries()
+                if (res) {
+                    setCountries(res)
+                }
+                setLoading(false)
+            } catch (err) {
+                setError(err.toString())
+                setLoading(false)
+            }
+        })()
+
         if (countries.length > 0) {
-            setFiltered(
-                countries
-                    .filter(
-                        (country) =>
-                            country.name.toLowerCase().includes(options.query) &&
-                            country.region.includes(options.region)
-                    ) // Based on the given query and the selected region filter the corresponding countries
-                    .map((country, index) => {
-                        return <Country country={country} key={index} />
-                    })
-            )
+            const newCountries = countries
+                .filter(
+                    (country) =>
+                        country.name.toLowerCase().includes(options.query) &&
+                        country.region.includes(options.region)
+                ) // Based on the given query and the selected region filter the corresponding countries
+                .map((country) => {
+                    return <Country country={country} key={country.name} />
+                })
+            setFiltered(newCountries)
         }
     }, [countries, options.query, options.region])
 
     const changeTheme = () => {
-        setTheme((theme) => (theme === "light" ? "dark" : "light"))
+        setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"))
     }
 
     const handleOptions = (e) => {
         const { name, value } = e.target
-        setOptions((options) => {
+        setOptions((prevOptions) => {
             return {
-                ...options,
+                ...prevOptions,
                 [name]: value,
             }
         })
